@@ -1,0 +1,129 @@
+<!doctype html>
+<!doctype html>
+<html>
+<script>
+
+function check(val)
+{ 
+	if (val<10)
+	{ 
+  		return("0"+val); 
+ 	}else{ 
+  		return(val); 
+ 	} 
+} 
+
+function show()
+{ 
+	var date = new Date();
+	var now = ""; 
+	now = date.getFullYear()+"年"+ check((date.getMonth()+1))+"月"+check(date.getDate())+"日  "+check(date.getHours())+"："+check(date.getMinutes())+"："+check(date.getSeconds()); 
+	document.getElementById("nowDiv").innerHTML = now;
+	setTimeout("show()",1000); 
+}
+	
+function onClickImg(){
+	var div = document.getElementById("test");
+	if(div.style.backgroundImage==url(image/off.jpg)){
+		div.style.backgroundImage=url(image/on.jpg);
+	}else{
+		div.style.backgroundImage=url(image/off.jpg);
+	}
+}
+</script>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>ZigBee 灯光控制系统</title>
+<style>
+	.header{
+		font-weight: bold;
+		text-align: center;
+		font-size: 36px;
+		color: aliceblue;
+		font-family:"等线";
+	}
+	.copyright{
+		font-size: 26px;
+		color: aliceblue;
+		font-weight: bold;
+		font-family: "等线";
+		text-align: center;
+	}
+	.div{
+		width: 126px;
+		height: 68px;
+		border: 1px solid black;
+		background-image: "url(image/off.jpg)";
+	}
+</style>
+</head>
+
+<body background="image/background.jpg" onLoad="show()">
+<table width="800" border="0" align="center">
+  <tbody>
+    <tr>
+      <td colspan="2" align="center" valign="top">
+	    <h1 class="header">ZigBee灯光控制系统</h1>
+	     <h2 align="right"><font color="aliceblue"><div id="nowDiv">date</div></font></h2>
+		  <h3 align="center">点击按钮以刷新</h3>
+		  <form action="cgi-bin/main1.cgi" method="post">
+		  	<input type="submit" name="fresh" value="刷新">
+		  </form>
+     
+      </td>
+          
+    </tr>
+    <tr>
+    	<td width="80">123</td>
+    	<td width="679"><table width="707" border="">
+    	  <tbody>
+    	    <tr>
+    	      <td width="228">
+ 	          <p>Room-101</p>
+  	          <p>$FLAG1011$</p>
+   	          <p>$FLAG1012$</p>
+   	          </td>
+   	          
+    	      <td width="228">
+ 	          <p>Room-102</p>
+  	          <p>$FLAG1021$</p>
+   	          <p>$FLAG1022$</p>
+   	        </td>
+   	          
+    	      <td width="229">
+ 	          <p>Room-103</p>
+	  	        <p>$FLAG1031$</p>
+	   	        <p>$FLAG1032$</p>
+   	          </td>
+  	      </tr>
+    	    <tr>
+    	      <td width="228">
+ 	          <p>Room-104</p>
+  	          <p>$FLAG1041$</p>
+   	          <p>$FLAG1042$</p>
+   	          </td>
+   	          
+    	      <td width="228">
+ 	          <p>Room-105</p>
+  	          <p>$FLAG1051$</p>
+   	          <p>$FLAG1052$</p>
+   	          </td>
+   	          
+    	      <td width="229">
+ 	          <p>Room-106</p>
+  	          <p>$FLAG1061$</p>
+   	          <p>$FLAG1062$</p>
+   	          </td>
+  	      </tr>
+  	    </tbody>
+  	  </table></td>
+    	
+    </tr>
+  </tbody>
+</table>
+
+<hr color="#663300" align="center" width="90%">
+<p class="copyright">Copyright&copy;&nbsp;&nbsp;&nbsp;莆田学院—信息工程学院</p>
+</body>
+</html>
